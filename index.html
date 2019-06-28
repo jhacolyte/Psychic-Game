@@ -12,10 +12,29 @@
     var wins = 0;
     var losses = 0;
     var directionsText = document.getElementById("directions");
-    var userChoiceText = document.getElementById("userchoice");
+    var userInputtext = document.getElementById("userInput");
     var computerChoiceText = document.getElementById("computerchoice");
     var winsText = document.getElementById("wins");
     var lossesText = document.getElementById("losses");
+
+    document.onkeyup = function(event) {
+        var userInput = event.key;
+        var compInput = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+        if (userInput == compInput) {
+            wins++
+        } else {
+            losses++
+        }
+    }
+
+        
+
+        userInput.textContent = "You Guess" + userInput;
+        computerChoiceText.textContent = "The computer chose" + compInput;
+        wins.textContent = "Wins: " + wins;
+        losses.textContent = "losses: " + losses;
+
    
 
 
@@ -27,7 +46,7 @@
             <h1>The Psychic Game!</h1>
             <p id="directions">Press any key to start playing!</p>
             <p id="Intro">Guess what letter im thinking of</p>
-            <p id="userchoice"></p>
+            <p id="userInput"></p>
             <p id="computerchoice"></p>
             <p id="wins"></p>
             <p id="losses"></p>
