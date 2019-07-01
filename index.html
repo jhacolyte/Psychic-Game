@@ -7,43 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS Gamme</title>
 
-    <script type="text/javascript">
-
-        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        var wins = 0;
-        var losses = 0;
-        var directionsText = document.getElementById("directions-text");
-        var userInputText = document.getElementById("userInput-text");
-        var computerChoiceText = document.getElementById("computerchoice-text");
-        var winsText = document.getElementById("wins-text");
-        var lossesText = document.getElementById("losses-text");
-
-        document.onkeyup = function (event) {
-            var userInput = event.key;
-            var compInput = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-            if (userInput == compInput) {
-                wins++;
-            } else {
-                losses++;
-            }
-
-
-            // console.log(userInput)
-            // console.log(compInput)
-            // directionsText.textContent = "";
-            userInputText.textContent = "You Guess: " + userInput;
-            computerChoiceText.textContent = "Computer chose: " + compInput;
-            winsText.textContent = "Wins: " + wins;
-            lossesText.textContent = "losses: " + losses;
-
-        };
-
-
-
-
-
-    </script>
+    
 </head>
 
 <body>
@@ -58,6 +22,45 @@
         <p id="guess-text"></p>
 
     </div>
+
+ 
+    <script type="text/javascript">
+
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var wins = 0;
+        var losses = 0;
+        var directionsText = document.getElementById("directions-text");
+        var userInputText = document.getElementById("userInput-text");
+        var computerChoiceText = document.getElementById("computerchoice-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+    
+        document.onkeyup = function (event) {
+            var userInput = event.key;
+            var compInput = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    
+    
+            if ((userInput === "a") || (userInput === "b") || (userInput === "c") || (userInput === "d") || (userInput === "e") || (userInput === "f") || (userInput === "g") || (userInput === "h") || (userInput === "i") || (userInput === "j") || (userInput === "k") || (userInput === "k") || (userInput === "m") || (userInput === "n") || (userInput === "o") || (userInput === "p") || (userInput === "q") || (userInput === "r") || (userInput === "s") || (userInput === "t") || (userInput === "u") || (userInput === "v") || (userInput === "w") || (userInput === "x") || (userInput === "y") || (userInput === "z")) 
+            { if (userInput === compInput) {
+                    wins++;
+                } else {
+                    losses++;
+                }
+            }
+    
+    
+            // console.log(userInput)
+            // console.log(compInput)
+    
+            userInputText.textContent = "You Guess: " + userInput;
+            computerChoiceText.textContent = "Computer chose: " + compInput;
+            winsText.textContent = "Wins: " + wins;
+            lossesText.textContent = "losses: " + losses;
+
+        };
+    
+    </script>
+
 
 </body>
 
